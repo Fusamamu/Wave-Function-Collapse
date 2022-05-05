@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace WCF
 {
@@ -40,10 +41,47 @@ namespace WCF
 					_newCell.name = $"[{_j}, {_i}]";
 					
 					Cells[_i + _j * _column] = _newCell;
+					
 				}
 			}
-			
 		}
 
+		public void Collapse()
+		{
+			foreach (var _cell in Cells)
+			{
+				if(_cell.IsCollapsed) continue;
+				
+				
+			}
+		}
+
+		public void PickRandomCell()
+		{
+			bool _allCollapsed = false;
+			
+			foreach (var _cell in Cells)
+				_allCollapsed = _cell.IsCollapsed;
+			
+			if(_allCollapsed) return;
+			
+			var _randomCell = GetRandomCell();
+
+			if (_randomCell.IsCollapsed)
+			{
+				PickRandomCell();
+				return;
+			}
+			
+			_randomCell.PickRandomModule();
+		}
+
+		public Cell GetRandomCell()
+		{
+			var _randomRow    = Random.Range(0, GridSize.y);
+			var _randomColumn = Random.Range(0, GridSize.x);
+
+			return Cells[_randomRow + _randomColumn * GridSize.x];
+		}
 	}
 }

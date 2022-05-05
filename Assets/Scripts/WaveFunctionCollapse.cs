@@ -16,5 +16,18 @@ namespace WCF
             
             imageGrid.Init();
         }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                imageGrid.PickRandomCell();
+                
+                
+                
+                
+                
+            }
+        }
     }
 }
