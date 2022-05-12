@@ -15,18 +15,14 @@ namespace WCF
                 imageGrid = FindObjectOfType<ImageGrid>();
             
             imageGrid.Init();
+            imageGrid.PickRandomCell().ForceCollapse();
         }
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                imageGrid.PickRandomCell();
-                
-                
-                
-                
-                
+                imageGrid.GetLeastEntropyCell().ForceCollapse();
             }
         }
     }

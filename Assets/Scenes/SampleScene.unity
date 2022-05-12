@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0f7ef52c3f64562b954c858b6b4fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridSize: {x: 5, y: 5}
+  GridSize: {x: 6, y: 6}
   CellWidth: 0
   CellHeight: 0
   CellPrefab: {fileID: 7816894087411395860, guid: 4ca1a5060ff3945e5a1903a098043902, type: 3}
